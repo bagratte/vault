@@ -14,12 +14,12 @@ This page describes common Vault use cases and provides related resources that c
 
 ## General Secret Storage
 
-As workloads become more and more ephemeral and short-lived, having long-lived static credentials pose a big security threat vector. What if credentials are accidentally leaked, or an employee leaves with their post it notes that contain the AWS access key, or someone checks their S3 access token to a public GH repo?
+As workloads become more and more ephemeral and short-lived, having long-lived static credentials poses a big security threat vector. What if credentials are accidentally leaked, or an employee leaves with their post it notes that contain the AWS access key, or someone checks their S3 access token to a public GH repo?
 With Vault, you can generate short-lived, just-in-time credentials that are automatically revoked when their time expires. This means users and security teams do not have to worry about manually revoking or changing these credentials.
 
 ### Static Secrets
 
-Credentials can be long-lived and static, where they don't change or are changed infrequently. Vault can store these secrets bedhind its cryptographic barrier, and clients can request them to use in their applications.
+Credentials can be long-lived and static, where they don't change or are changed infrequently. Vault can store these secrets behind its cryptographic barrier, and clients can request them to use in their applications.
 
 - Refer to the [Versioned Key/Vault Secrets Engine](/vault/tutorials/secrets-management/versioned-kv) tutorial and learn how a versioned key-value secrets engine protects your static secrets.
 
@@ -33,11 +33,11 @@ In addition to database credential management, Vault can manage your Active Dire
 
 ## Data Encryption
 
-Many organizations seek solutions to encrypt/decrypt application data within a cloud or multi-datacenter environment; deploying cryptography and maintaining a complex key management infrastructure can be expensive and challenging to develop. Vault provides [encryption as a service](/vault/docs/secrets/transit) with centralized key management to simplify encrypting data in transit and stored across clouds and datacenters. Vault can encrypt/decrypt data stored elsewhere, essentially allowing applications to encrypt their data while storing it in the primary data store. Vault's security team manages and maintains the responsibility of the data encryption within the Vault environment, allowing developers to focus solely on encrypting/decrypting data as needed.
+Many organizations seek solutions to encrypt/decrypt application data within a cloud or multi-datacenter environment. Deploying cryptography and maintaining a complex key management infrastructure can be expensive and challenging to develop. Vault provides [encryption as a service](/vault/docs/secrets/transit) with centralized key management to simplify encrypting data in transit and storing it across clouds and datacenters. Vault can encrypt/decrypt data stored elsewhere, essentially allowing applications to encrypt their data while storing it in the primary data store. Vault's security team manages and maintains the responsibility of the data encryption within the Vault environment, allowing developers to focus solely on encrypting/decrypting data as needed.
 
 ### Resources
 
-- Try our [Encryption as a Service: Transit Secrets Engine](/vault/tutorials/encryption-as-a-service) to learn the essential workings of the Transit secrets engine handles cryptographic functions on data in-transit.
+- Try our [Encryption as a Service: Transit Secrets Engine](/vault/tutorials/encryption-as-a-service) to learn the essential workings of how the Transit secrets engine handles cryptographic functions on data in-transit.
 
 - For more advanced data protection, refer to the [Advanced Data Protection](/vault/tutorials/adp) tutorial series. Vault's Transform secrets engine handles secure data transformation and tokenization against provided input value.
 
